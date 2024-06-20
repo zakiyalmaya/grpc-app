@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/zakiyalmaya/grpc-app/calculator";
+
+service CalculatorService {
+  rpc Add (Request) returns (Response);
+  rpc Subtract (Request) returns (Response);
+  rpc Multiple (Request) returns (Response);
+  rpc Divide (Request) returns (Response);
+}
+
+message Request {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+message Response {
+  float result = 1;
+}
